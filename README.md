@@ -7,7 +7,8 @@
 # Getting Started
  1) Clone the repo
  2) Enter its directory
- 2) Run `$ npm install`
+ 3) Run `$ npm install`
+ 4) Run `$ npm start` to get the server running on port 3000!
 
 # What's included in this base
  - **ReactJS**
