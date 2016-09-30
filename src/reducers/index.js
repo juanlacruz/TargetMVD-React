@@ -1,4 +1,4 @@
-import exampleReducer from './exampleReducer';
+import exampleReducer from './exampleReducer.jsx';
 
 export {
   exampleReducer,
