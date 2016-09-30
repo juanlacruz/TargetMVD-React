@@ -1,5 +1,5 @@
-// import exampleReducer from './exampleReducer';
+import exampleReducer from './exampleReducer';
 
 export {
-  // exampleReducer,
+  exampleReducer,
 };

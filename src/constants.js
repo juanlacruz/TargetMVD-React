@@ -1,1 +1,1 @@
-//export const EXAMPLE = 'EXAMPLE';
+//export const EXAMPLE_CONSTANT = 'EXAMPLE CONSTANT';

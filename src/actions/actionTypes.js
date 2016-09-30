@@ -1,1 +1,1 @@
-//export const ACTION_EXAMPLE = 'ACTION EXAMPLE';
+export const ACTION_EXAMPLE = 'ACTION EXAMPLE';

@@ -15,3 +15,4 @@
  - **Redux**
  - **react-redux** which brings a nice way to integrate both
  - **redux-devtools** for debugging
+ - **react-router** for routing

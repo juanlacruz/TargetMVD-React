@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import * as reducers from './reducers';
 
-import App from './components/App/App';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 import './index.css';
 
 const reducer = combineReducers(reducers);
@@ -14,7 +15,7 @@ class ReduxAppWrapper extends Component {
   render() {
     return(
       <Provider store={store}>
-        <App />
+        <Router history={browserHistory} routes={routes} />
       </Provider>
     );
   }
@@ -22,5 +23,5 @@ class ReduxAppWrapper extends Component {
 
 ReactDOM.render(
   <ReduxAppWrapper />,
-  document.getElementById('root')
+  document.getElementById('react-root')
 );
