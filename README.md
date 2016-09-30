@@ -11,7 +11,7 @@
  3. Install project dependencies `$ npm install`
  4. Start the dev server to get the server running on port 3000! `$ npm start`
 
-# What's included in this base
+# What's included
  - **ReactJS**
  - **Redux**
  - **react-redux** which brings a nice way to integrate both
@@ -19,3 +19,4 @@
  - **react-router** for routing
  - **Webpack** for bundling JS and other assets into static files
  - **Babel** with its ES6 and React presets to transpile our code to normal JS since ES6 and JSX are not fully supported by all browsers
+ - **axios** library to make remote HTTP requests using promises
