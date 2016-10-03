@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 import Home from '../components/Home/Home';
-//import {/* ... */} from '../../actions';
+import Config from 'Config';
+import { logout } from '../actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    logout: () => {
+      dispatch(logout());
+    }
   };
 }
 

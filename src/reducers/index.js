@@ -1,5 +1,7 @@
-import exampleReducer from './exampleReducer.jsx';
+import loginReducer from './loginReducer.jsx';
+import signupReducer from './signupReducer.js';
 
 export {
-  exampleReducer,
+  loginReducer,
+  signupReducer,
 };
