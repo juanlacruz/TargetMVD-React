@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Signup from '../components/Signup/Signup';
 import Config from 'Config';
-import { signup, resetSignupForm, updateSignupForm }
+import { signup, resetSignupForm, updateSignupForm, signupRequest }
 from '../actions/signupActions';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
@@ -15,16 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     submitSignup: (signupData) => {
-      axios.post(Config.serverUrl + 'users', {user: signupData})
-        .then((response) => {
-          let userData = response.data;
-          dispatch(signup(userData));
-          browserHistory.push('/home');
-        })
-        .catch((error) => {
-          console.log(error);
-          dispatch(resetSignupForm())
-        });
+      dispatch(signupRequest(signupData));
     },
     updateSignupForm: (field, value) => dispatch(updateSignupForm(field, value)),
   };

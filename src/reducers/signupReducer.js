@@ -7,10 +7,16 @@ const initialState = {
     password_confirmation:'',
     username:'',
   },
+  isLoading: false,
 };
 
 export default function signupReducer(state = initialState, action = {}) {
   switch (action.type) {
+    case types.LOADING_SIGNUP:
+      return {
+        ...state,
+        isLoading: action.value
+      }
     case types.SIGNUP_FORM_UPDATE: {
       let data = Object.assign({}, state.signupData);
       data[action.field] = action.value;

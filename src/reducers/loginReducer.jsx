@@ -7,6 +7,7 @@ const initialState = {
     email: '',
     password: '',
   },
+  isLoading: false,
 };
 
 export default function loginReducer(state = initialState, action = {}) {
@@ -19,6 +20,11 @@ export default function loginReducer(state = initialState, action = {}) {
         user: action.user,
       };
     }
+    case types.LOADING_LOGIN:
+      return {
+        ...state,
+        isLoading: action.value,
+      }
     case types.LOGOUT:
       localStorage.removeItem(constants.AUTH_TOKEN_KEY);
       return {
