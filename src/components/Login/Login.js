@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import {Link} from 'react-router';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
+import * as constants from '../../constants';
 
 import './Login.css';
 import LoginForm from './LoginForm';
 
 class Login extends Component {
   componentWillMount() {
-    if(localStorage.getItem('auth_token')) {
+    if(localStorage.getItem(constants.AUTH_TOKEN_KEY)) {
       browserHistory.push('/home');
     }
   }
@@ -20,6 +21,7 @@ class Login extends Component {
           <LoginForm
             submitLogin={this.props.submitLogin}
             loginData={this.props.loginData}
+            updateLoginForm={this.props.updateLoginForm}
           />
           <Link to='/signup'>Sign Up</Link>
         </div>

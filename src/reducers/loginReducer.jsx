@@ -1,9 +1,10 @@
 import * as types from '../actions/actionTypes';
+import * as constants from '../constants';
 
 const initialState = {
   user: null,
   loginData: {
-    username: '',
+    email: '',
     password: '',
   },
 };
@@ -12,14 +13,14 @@ export default function loginReducer(state = initialState, action = {}) {
   switch (action.type) {
     case types.SIGNUP:
     case types.LOGIN: {
-      localStorage.setItem('auth_token', action.user.token);
+      localStorage.setItem(constants.AUTH_TOKEN_KEY, action.user.token);
       return {
         ...state,
         user: action.user,
       };
     }
     case types.LOGOUT:
-      localStorage.removeItem('auth_token');
+      localStorage.removeItem(constants.AUTH_TOKEN_KEY);
       return {
         ...state,
         user: null,
@@ -36,7 +37,7 @@ export default function loginReducer(state = initialState, action = {}) {
     case types.LOGIN_FORM_RESET:
       return {
         ...state,
-        loginData: {},
+        loginData: initialState.loginData,
       };
     default:
       return state;

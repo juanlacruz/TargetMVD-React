@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import Signup from '../components/Signup/Signup';
 import Config from 'Config';
-import { signup, resetSignupForm, updateSignupForm } from '../actions';
+import { signup, resetSignupForm, updateSignupForm }
+from '../actions/signupActions';
 import axios from 'axios';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {

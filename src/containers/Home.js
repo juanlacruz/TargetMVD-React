@@ -1,19 +1,21 @@
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import Home from '../components/Home/Home';
 import Config from 'Config';
-import { logout } from '../actions';
+import { logout } from '../actions/loginActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    logout: () => {
-      dispatch(logout());
-    }
+
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-
+    logout: () => {
+      dispatch(logout());
+      browserHistory.push('/');
+    }
   };
 }
 

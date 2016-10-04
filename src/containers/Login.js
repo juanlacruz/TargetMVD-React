@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login/Login';
 import Config from 'Config';
-import { login, logout, } from '../actions';
+import { login, logout, updateLoginForm, resetLoginForm } from '../actions/loginActions';
+import axios from 'axios';
+import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,10 +15,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     submitLogin: (loginData) => {
-      axios.post(Config.serverUrl + 'users', loginData)
+      axios.post(Config.serverUrl + 'users/sign_in', {user: loginData})
         .then(function (response) {
-          dispatch(login(response));
-          console.log(response);
+          let userData = response.data;
+          dispatch(login(userData));
+          browserHistory.push('/home');
         })
         .catch(function (error) {
           dispatch(resetLoginForm())

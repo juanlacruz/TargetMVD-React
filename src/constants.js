@@ -1,1 +1,1 @@
-//export const EXAMPLE_CONSTANT = 'EXAMPLE CONSTANT';
+export const AUTH_TOKEN_KEY = 'auth_token';

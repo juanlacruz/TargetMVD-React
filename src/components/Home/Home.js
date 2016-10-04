@@ -12,6 +12,7 @@ class Home extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <input type="button" onClick={this.props.logout} value="Log Out" />
       </div>
     );
   }

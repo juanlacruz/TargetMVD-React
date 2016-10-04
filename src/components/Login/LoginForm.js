@@ -3,14 +3,25 @@ import React, { Component, PropTypes } from 'react';
 class LoginForm extends Component {
   render() {
     let loginData = this.props.loginData;
+    let updateLoginForm = this.props.updateLoginForm;
 
     return(
       <form
-        onSubmit={() => this.props.submitLogin(loginData)}
+        onSubmit={
+          (e) => {
+            e.preventDefault();
+            this.props.submitLogin(loginData);
+          }}
         className="form"
       >
-        <input type="text" name="username" value={loginData.username}/>
-        <input type="text" name="password" value={loginData.password}/>
+        <input type="text" name="email"
+          value={loginData.email}
+          onChange={(event) => updateLoginForm('email', event.target.value)}
+        />
+        <input type="text" name="password"
+          value={loginData.password}
+          onChange={(event) => updateLoginForm('password', event.target.value)}
+        />
         <input type="submit" value="Login" />
       </form>
     );
