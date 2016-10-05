@@ -3,21 +3,21 @@ import axios from 'axios';
 import Config from 'Config';
 import { browserHistory } from 'react-router';
 
-export function signup(user) {
+export function signupSuccess(user) {
   return {
-    type: types.SIGNUP,
+    type: types.SIGNUP_SUCCESS,
     user: user,
   };
 }
 
 export function loadingSignup(value) {
   return {
-    type: types.SIGNUP_LOADING,
+    type: types.SIGNUP_REQUEST,
     isLoading: value,
   };
 }
 
-export function signupRequest(signupData) {
+export function signup(signupData) {
   return (dispatch, getState) => {
     let state = getState();
     dispatch(loadingSignup(true));
@@ -34,7 +34,7 @@ export function signupRequest(signupData) {
           throw 'request failed';
         })
         .then(userData => {
-          dispatch(signup(userData));
+          dispatch(signupSuccess(userData));
           browserHistory.push('/home');
         })
         .catch(error => {

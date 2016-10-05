@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login/Login';
 import Config from 'Config';
-import { login, logout, updateLoginForm, resetLoginForm, loginRequest } from '../actions/loginActions';
+import { login, updateLoginForm, resetLoginForm, loginRequest }
+from '../actions/loginActions';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
@@ -15,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     submitLogin: (loginData) => {
-      dispatch(loginRequest(loginData));
+      dispatch(login(loginData));
     },
     updateLoginForm: (field, value) => dispatch(updateLoginForm(field, value)),
   };
