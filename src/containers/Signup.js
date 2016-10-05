@@ -5,6 +5,7 @@ import { signup, updateSignupForm } from '../actions/signupActions';
 const mapStateToProps = (state) => {
   return {
     signupData: state.signupReducer.signupData,
+    signupError: state.signupReducer.signupError,
   };
 }
 

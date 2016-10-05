@@ -26,11 +26,11 @@ export function logout() {
           dispatch(logoutSuccess());
           browserHistory.push('/');
         } else {
-          dispatch(logoutFailure())
           throw 'request failed';
         }
       })
       .catch(error => {
+        dispatch(logoutFailure());
         console.log(error);
       });
   }

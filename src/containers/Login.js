@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.loginReducer.user,
     loginData: state.loginReducer.loginData,
+    loginError: state.loginReducer.loginError,
   };
 }
 

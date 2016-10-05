@@ -10,7 +10,14 @@ export function signupSuccess(user) {
   };
 }
 
-export function loadingSignup(value) {
+export function signupFailure() {
+  return {
+    type: types.SIGNUP_FAILURE,
+    error: 'There was an error signing up, please try again',
+  }
+}
+
+export function signupRequest(value) {
   return {
     type: types.SIGNUP_REQUEST,
     isLoading: value,
@@ -19,12 +26,12 @@ export function loadingSignup(value) {
 
 export function signup(signupData) {
   return (dispatch) => {
-    dispatch(loadingSignup(true));
+    dispatch(signupRequest(true));
 
     return axios
         .post(Config.serverUrl + 'users', {user: signupData})
         .then(response => {
-          dispatch(loadingSignup(false));
+          dispatch(signupRequest(false));
 
           if(response.status === 200) {
             return response.data;
@@ -38,7 +45,7 @@ export function signup(signupData) {
         })
         .catch(error => {
           console.log(error);
-          dispatch(resetSignupForm())
+          dispatch(signupFailure());
         });
   };
 }
@@ -50,10 +57,3 @@ export function updateSignupForm(field, value) {
     value: value,
   };
 }
-
-export function resetSignupForm() {
-  return {
-    type: types.SIGNUP_FORM_RESET,
-  };
-}
-

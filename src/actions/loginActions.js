@@ -11,12 +11,6 @@ export function updateLoginForm(field, value) {
   };
 }
 
-export function resetLoginForm() {
-  return {
-    type: types.LOGIN_FORM_RESET,
-  };
-}
-
 export function loginRequest(value) {
   return {
     type: types.LOGIN_REQUEST,
@@ -52,7 +46,7 @@ export function login(loginData) {
           browserHistory.push('/home');
         })
         .catch(error => {
-          dispatch(resetLoginForm())
+          dispatch(loginFailure());
           console.log(error);
         });
   };

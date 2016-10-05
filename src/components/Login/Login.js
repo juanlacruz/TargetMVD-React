@@ -23,6 +23,11 @@ class Login extends Component {
             loginData={this.props.loginData}
             updateLoginForm={this.props.updateLoginForm}
           />
+          {
+            this.props.loginError ?
+            <span>{this.props.loginError}</span> :
+            null
+          }
           <Link to='/signup'>Sign Up</Link>
         </div>
       </div>
@@ -34,6 +39,7 @@ Login.propTypes = {
   submitLogin: PropTypes.func.isRequired,
   updateLoginForm: PropTypes.func.isRequired,
   loginData: PropTypes.object,
+  loginError: PropTypes.string,
 }
 
 export default Login;

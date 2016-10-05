@@ -13,6 +13,11 @@ class Home extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <input type="button" onClick={this.props.logout} value="Log Out" />
+        {
+          this.props.logoutError ?
+          <span>{this.props.logoutError}</span> :
+          null
+        }
       </div>
     );
   }
@@ -20,6 +25,7 @@ class Home extends Component {
 
 Home.propTypes = {
   logout: PropTypes.func.isRequired,
+  logoutError: PropTypes.string,
 }
 
 export default Home;

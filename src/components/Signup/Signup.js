@@ -15,6 +15,11 @@ class Signup extends Component {
             updateSignupForm={this.props.updateSignupForm}
             signupData={this.props.signupData}
           />
+          {
+            this.props.signupError ?
+            <span>{this.props.signupError}</span> :
+            null
+          }
           <Link to='/'>Log In</Link>
         </div>
       </div>
@@ -26,6 +31,7 @@ Signup.propTypes = {
   submitSignup: PropTypes.func.isRequired,
   updateSignupForm: PropTypes.func.isRequired,
   signupData: PropTypes.object,
+  signupError: PropTypes.string,
 }
 
 export default Signup;
