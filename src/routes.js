@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, IndexRoute } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './components/App/App';
 import LoginContainer from './containers/Login';

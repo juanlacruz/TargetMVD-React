@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './Home.css';
 
@@ -16,6 +16,10 @@ class Home extends Component {
       </div>
     );
   }
+}
+
+Home.propTypes = {
+  logout: PropTypes.func.isRequired,
 }
 
 export default Home;

@@ -1,18 +1,14 @@
 import { connect } from 'react-redux';
 import Signup from '../components/Signup/Signup';
-import Config from 'Config';
-import { signup, resetSignupForm, updateSignupForm }
-from '../actions/signupActions';
-import axios from 'axios';
-import { browserHistory } from 'react-router';
+import { signup, updateSignupForm } from '../actions/signupActions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     signupData: state.signupReducer.signupData,
   };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     submitSignup: (signupData) => {
       dispatch(signup(signupData));

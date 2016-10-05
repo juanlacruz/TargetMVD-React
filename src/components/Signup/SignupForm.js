@@ -38,7 +38,8 @@ class SignupForm extends Component {
 
 SignupForm.propTypes = {
   submitSignup: PropTypes.func.isRequired,
-  SignupData: PropTypes.object,
+  updateSignupForm: PropTypes.func.isRequired,
+  signupData: PropTypes.object,
 }
 
 export default SignupForm;

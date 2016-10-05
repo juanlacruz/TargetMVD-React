@@ -18,8 +18,7 @@ export function loadingSignup(value) {
 }
 
 export function signup(signupData) {
-  return (dispatch, getState) => {
-    let state = getState();
+  return (dispatch) => {
     dispatch(loadingSignup(true));
 
     return axios

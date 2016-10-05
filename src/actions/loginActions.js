@@ -2,7 +2,6 @@ import * as types from './actionTypes';
 import axios from 'axios';
 import Config from 'Config';
 import { browserHistory } from 'react-router';
-import * as constants from '../constants'
 
 export function updateLoginForm(field, value) {
   return {
@@ -33,8 +32,7 @@ export function loginFailure() {
 }
 
 export function login(loginData) {
-  return (dispatch, getState) => {
-    let state = getState();
+  return (dispatch) => {
     dispatch(loginRequest(true));
 
     return axios
@@ -46,7 +44,7 @@ export function login(loginData) {
             return response.data
           }
 
-          dispatch(loginError());
+          dispatch(loginFailure());
           throw 'request failed';
         })
         .then(userData => {

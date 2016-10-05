@@ -5,8 +5,7 @@ import { browserHistory } from 'react-router';
 import * as constants from '../constants';
 
 export function logout() {
-  return (dispatch, getState) => {
-    let state = getState();
+  return (dispatch) => {
     dispatch(logoutRequest(true));
 
     return axios

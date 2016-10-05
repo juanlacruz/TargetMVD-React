@@ -1,0 +1,28 @@
+{
+  // I want to use babel-eslint for parsing!
+  "parser": "babel-eslint",
+  "env": {
+    // I write for browser
+    "browser": true,
+    // in CommonJS
+    "node": true
+  },
+  // To give you an idea how to override rule options:
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "eol-last": [0],
+    "no-mixed-requires": [0],
+    "no-underscore-dangle": [0],
+    "no-console": "off",
+    react/prop-types: [2, {"ignore": ["className", "children", "id", "onClick", "style"]}]
+  },
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "30.0" // React version, default to the latest React stable release
+    }
+  }
+}

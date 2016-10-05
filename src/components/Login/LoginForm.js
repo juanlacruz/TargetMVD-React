@@ -30,6 +30,7 @@ class LoginForm extends Component {
 
 LoginForm.propTypes = {
   submitLogin: PropTypes.func.isRequired,
+  updateLoginForm: PropTypes.func.isRequired,
   loginData: PropTypes.object,
 }
 
