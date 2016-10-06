@@ -1,6 +1,7 @@
 # Dependencies
  - Node.js for running development server
  - npm for handling JS packages
+ - Webpack to bundle our files into static assets for the web server
 
 **Note:**  *recommended Node >= 6 and npm >= 3 for faster installation speed and better disk usage*
 
@@ -12,13 +13,14 @@
  4. Start the dev server to get the server running on port 3000! `$ npm start`
 
 # What's included
- - **ReactJS**
- - **Redux**
- - **react-redux** which brings a nice way to integrate both
- - **redux-devtools** for debugging
- - **react-router** for routing
- - **redux-form** for form handling using Redux
- - **Webpack** for bundling JS and other assets into static files
+ - [**ReactJS**](https://facebook.github.io/react/)
+ - [**Redux**](http://redux.js.org)
+ - [**react-redux**](https://github.com/reactjs/react-redux) which brings a nice way to integrate both
+ - [**redux-devtools**](https://github.com/facebook/react-devtools) for debugging
+ - [**react-router**](https://github.com/ReactTraining/react-router) for routing
+ - [**redux-form**](http://redux-form.com/) for form handling using Redux
+ - [**validate.js**](https://validatejs.org) for form validation
+ - [**Webpack**](https://webpack.github.io/) for bundling JS and other assets into static files
+ - [**axios**](https://github.com/mzabriskie/axios) library to make remote HTTP requests using promises
  - **Babel** with its ES6 and React presets to transpile our code to normal JS since ES6 and JSX are not fully supported by all browsers
- - **axios** library to make remote HTTP requests using promises
  - Linting libraries for JS ES6, Babel and JSX for dev environments
