@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import FormField from './FormField';
-import {validate as validateForm} from 'validate.js';
+import { validate as validateForm } from 'validate.js';
 import * as constants from '../../constants';
 
 const errorMessages = {
@@ -27,7 +27,7 @@ const signupDataConstraints = {
     },
   },
   password_confirmation: {
-    presence: { message: errorMessages.password },
+    presence: { message: errorMessages.password_confirmation },
     equality: {
       attribute: 'password',
       message: errorMessages.password_confirmation,
@@ -36,7 +36,8 @@ const signupDataConstraints = {
 }
 
 const validate = values => {
-  return validateForm(values, signupDataConstraints, {fullMessages: false});
+  let errors = validateForm(values, signupDataConstraints, {fullMessages: false});
+  return (errors ? errors : {});
 }
 
 class SignupForm extends Component {

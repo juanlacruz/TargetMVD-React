@@ -14,15 +14,13 @@ class Login extends Component {
   }
 
   render() {
-    const { submitLogin, loginData, updateLoginForm, loginError} = this.props;
+    const { submitLogin, loginError} = this.props;
     return (
       <div>
         <div>
           <h2>Login</h2>
           <LoginForm
             submitLogin={submitLogin}
-            loginData={loginData}
-            updateLoginForm={updateLoginForm}
           />
           {
             loginError ?
@@ -38,8 +36,6 @@ class Login extends Component {
 
 Login.propTypes = {
   submitLogin: PropTypes.func.isRequired,
-  updateLoginForm: PropTypes.func.isRequired,
-  loginData: PropTypes.object,
   loginError: PropTypes.string,
 }
 

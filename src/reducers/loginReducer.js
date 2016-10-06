@@ -36,15 +36,6 @@ export default function loginReducer(state = initialState, action = {}) {
         loginData: initialState.loginData,
       }
     }
-    case types.LOGIN_FORM_UPDATE: {
-      let data = Object.assign({}, state.loginData);
-      data[action.field] = action.value;
-
-      return {
-        ...state,
-        loginData: data,
-      };
-    }
     default:
       return state;
   }

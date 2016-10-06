@@ -6,8 +6,7 @@ import SignupForm from './SignupForm';
 
 class Signup extends Component {
   render() {
-    const { submitSignup, updateSignupForm, signupData,
-      signupError} = this.props;
+    const { submitSignup, signupError} = this.props;
 
     return (
       <div>
@@ -15,8 +14,6 @@ class Signup extends Component {
           <h2>Signup</h2>
           <SignupForm
             submitSignup={submitSignup}
-            updateSignupForm={updateSignupForm}
-            signupData={signupData}
           />
           {
             signupError ?
@@ -32,8 +29,6 @@ class Signup extends Component {
 
 Signup.propTypes = {
   submitSignup: PropTypes.func.isRequired,
-  updateSignupForm: PropTypes.func.isRequired,
-  signupData: PropTypes.object,
   signupError: PropTypes.string,
 }
 

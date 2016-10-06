@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import Signup from '../components/Signup/Signup';
-import { signup, updateSignupForm } from '../actions/signupActions';
+import { signup } from '../actions/signupActions';
 
 const mapStateToProps = (state) => {
   return {
-    signupData: state.signupReducer.signupData,
     signupError: state.signupReducer.signupError,
   };
 }
@@ -14,7 +13,6 @@ const mapDispatchToProps = (dispatch) => {
     submitSignup: (signupData) => {
       dispatch(signup(signupData));
     },
-    updateSignupForm: (field, value) => dispatch(updateSignupForm(field, value)),
   };
 }
 

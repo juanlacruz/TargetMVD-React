@@ -49,11 +49,3 @@ export function signup(signupData) {
         });
   };
 }
-
-export function updateSignupForm(field, value) {
-  return {
-    type: types.SIGNUP_FORM_UPDATE,
-    field: field,
-    value: value,
-  };
-}

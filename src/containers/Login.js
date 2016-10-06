@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login/Login';
-import { login, updateLoginForm } from '../actions/loginActions';
+import { login } from '../actions/loginActions';
 
 const mapStateToProps = (state) => {
   return {
     user: state.loginReducer.user,
-    loginData: state.loginReducer.loginData,
     loginError: state.loginReducer.loginError,
   };
 }
@@ -15,7 +14,6 @@ const mapDispatchToProps = (dispatch) => {
     submitLogin: (loginData) => {
       dispatch(login(loginData));
     },
-    updateLoginForm: (field, value) => dispatch(updateLoginForm(field, value)),
   };
 }
 

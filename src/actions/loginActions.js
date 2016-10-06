@@ -3,14 +3,6 @@ import axios from 'axios';
 import Config from 'Config';
 import { browserHistory } from 'react-router';
 
-export function updateLoginForm(field, value) {
-  return {
-    type: types.LOGIN_FORM_UPDATE,
-    field: field,
-    value: value,
-  };
-}
-
 export function loginRequest(value) {
   return {
     type: types.LOGIN_REQUEST,
