@@ -6,18 +6,21 @@ import SignupForm from './SignupForm';
 
 class Signup extends Component {
   render() {
+    const { submitSignup, updateSignupForm, signupData,
+      signupError} = this.props;
+
     return (
       <div>
         <div>
           <h2>Signup</h2>
           <SignupForm
-            submitSignup={this.props.submitSignup}
-            updateSignupForm={this.props.updateSignupForm}
-            signupData={this.props.signupData}
+            submitSignup={submitSignup}
+            updateSignupForm={updateSignupForm}
+            signupData={signupData}
           />
           {
-            this.props.signupError ?
-            <span>{this.props.signupError}</span> :
+            signupError ?
+            <span>{signupError}</span> :
             null
           }
           <Link to='/'>Log In</Link>

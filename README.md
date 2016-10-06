@@ -17,6 +17,7 @@
  - **react-redux** which brings a nice way to integrate both
  - **redux-devtools** for debugging
  - **react-router** for routing
+ - **redux-form** for form handling using Redux
  - **Webpack** for bundling JS and other assets into static files
  - **Babel** with its ES6 and React presets to transpile our code to normal JS since ES6 and JSX are not fully supported by all browsers
  - **axios** library to make remote HTTP requests using promises

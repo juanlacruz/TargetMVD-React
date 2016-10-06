@@ -14,18 +14,19 @@ class Login extends Component {
   }
 
   render() {
+    const { submitLogin, loginData, updateLoginForm, loginError} = this.props;
     return (
       <div>
         <div>
           <h2>Login</h2>
           <LoginForm
-            submitLogin={this.props.submitLogin}
-            loginData={this.props.loginData}
-            updateLoginForm={this.props.updateLoginForm}
+            submitLogin={submitLogin}
+            loginData={loginData}
+            updateLoginForm={updateLoginForm}
           />
           {
-            this.props.loginError ?
-            <span>{this.props.loginError}</span> :
+            loginError ?
+            <span>{loginError}</span> :
             null
           }
           <Link to='/signup'>Sign Up</Link>

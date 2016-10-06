@@ -1,28 +1,23 @@
 import React, { Component, PropTypes } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 class LoginForm extends Component {
   render() {
-    let loginData = this.props.loginData;
-    let updateLoginForm = this.props.updateLoginForm;
-
+    const { handleSubmit, submitLogin } = this.props;
     return(
       <form
-        onSubmit={
-          (e) => {
-            e.preventDefault();
-            this.props.submitLogin(loginData);
-          }}
+        onSubmit={handleSubmit(submitLogin)}
         className="form"
       >
-        <input type="text" name="email"
-          value={loginData.email}
-          onChange={(event) => updateLoginForm('email', event.target.value)}
-        />
-        <input type="text" name="password"
-          value={loginData.password}
-          onChange={(event) => updateLoginForm('password', event.target.value)}
-        />
-        <input type="submit" value="Login" />
+        <div>
+          <label htmlFor="email"> Email </label>
+          <Field name="email" component="input" type="email" />
+        </div>
+        <div>
+          <label htmlFor="password"> Password </label>
+          <Field name="password" component="input" type="password" />
+        </div>
+        <button type="submit">Submit</button>
       </form>
     );
   }
@@ -30,8 +25,11 @@ class LoginForm extends Component {
 
 LoginForm.propTypes = {
   submitLogin: PropTypes.func.isRequired,
-  updateLoginForm: PropTypes.func.isRequired,
-  loginData: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
 }
 
-export default LoginForm;
+const LoginReduxForm = reduxForm({
+  form: 'login'
+})(LoginForm);
+
+export default LoginReduxForm;

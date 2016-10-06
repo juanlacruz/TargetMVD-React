@@ -4,6 +4,7 @@ import './Home.css';
 
 class Home extends Component {
   render() {
+    const { logout, logoutError } = this.props;
     return (
       <div className="App">
         <div className="App-header">
@@ -12,10 +13,10 @@ class Home extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <input type="button" onClick={this.props.logout} value="Log Out" />
+        <input type="button" onClick={logout} value="Log Out" />
         {
-          this.props.logoutError ?
-          <span>{this.props.logoutError}</span> :
+          logoutError ?
+          <span>{logoutError}</span> :
           null
         }
       </div>
