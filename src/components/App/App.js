@@ -5,7 +5,9 @@ class App extends Component {
     const { children } = this.props;
     return (
       <div className="app-container">
+        { /* Header component goes here*/ }
         {children}
+        { /* Footer component goes here*/ }
       </div>
     );
   }

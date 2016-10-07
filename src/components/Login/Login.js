@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import { browserHistory } from 'react-router';
 import * as constants from '../../constants';
 
-import './Login.css';
+import '../../styles/Login.scss';
 import LoginForm from './LoginForm';
 
 class Login extends Component {

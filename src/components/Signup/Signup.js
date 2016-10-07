@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {Link} from 'react-router';
 
-import './Signup.css';
+import '../../styles/Signup.scss';
 import SignupForm from './SignupForm';
 
 class Signup extends Component {

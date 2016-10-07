@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import './Home.css';
+import '../../styles/Home.scss';
 
 class Home extends Component {
   render() {

@@ -8,7 +8,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import './index.css';
+import './styles/index.scss';
 
 Object.assign(reducers, {form: formReducer});
 const reducer = combineReducers(reducers);

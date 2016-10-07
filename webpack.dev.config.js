@@ -1,3 +1,5 @@
+const path = require('path');
+
 var config = {
   entry: './src/index.js',
   output: {
@@ -18,6 +20,15 @@ var config = {
         test: /\.css$/,
         loader: "style-loader!css-loader"
       },
+      { test: /\.scss?$/,
+        loader: 'style!css!sass'
+      },
+      { test: /\.png$/,
+        loader: 'file'
+      },
+      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file'
+      },
     ],
   },
   devServer: {
@@ -25,11 +36,9 @@ var config = {
     hot: true
   },
   externals: {
-    'Config': JSON.stringify(process.env.ENV === 'production' ? {
-      serverUrl: "https://myserver.com/api/v1"
-    } : {
-      serverUrl: "http://localhost:3000/api/v1/"
-    })
+    'Config': JSON.stringify({
+      serverUrl: "http://localhost:3000/api/v1/",
+    }),
   },
 };
 

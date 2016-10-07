@@ -26,6 +26,7 @@ const validate = values => {
 class LoginForm extends Component {
   render() {
     const { handleSubmit, submitLogin } = this.props;
+
     return(
       <form
         onSubmit={ handleSubmit(submitLogin) }
