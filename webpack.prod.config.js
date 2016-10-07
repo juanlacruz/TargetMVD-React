@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const path = require('path')
+const path = require('path');
 
-var config = {
+let config = {
   devtool: 'source-map',
   entry: './src/index.js',
   output: {
@@ -24,7 +24,7 @@ var config = {
       },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
-        include: path.join(__dirname, 'src', 'styles') },
+        include: path.join(__dirname, 'src', 'styles')
       },
       { test: /\.png$/,
         loader: 'file'

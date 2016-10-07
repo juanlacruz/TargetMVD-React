@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
     user: state.loginReducer.user,
     loginError: state.loginReducer.loginError,
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -15,11 +15,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(login(loginData));
     },
   };
-}
+};
 
 const LoginContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Login)
+)(Login);
 
 export default LoginContainer;

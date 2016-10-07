@@ -3,8 +3,8 @@ import React, { Component, PropTypes } from 'react';
 class FormField extends Component {
 
   render() {
-    const {input, label, type, meta: { touched, error }} = this.props;
-    return(
+    const { input, label, type, meta: { touched, error } } = this.props;
+    return (
       <div>
         <label>{label}</label>
         <div>
@@ -21,6 +21,6 @@ FormField.PropTypes = {
   label: PropTypes.string,
   type: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
-}
+};
 
 export default FormField;

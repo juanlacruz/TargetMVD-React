@@ -27,6 +27,6 @@ class Home extends Component {
 Home.propTypes = {
   logout: PropTypes.func.isRequired,
   logoutError: PropTypes.string,
-}
+};
 
 export default Home;

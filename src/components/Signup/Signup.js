@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 import '../../styles/Signup.scss';
 import SignupForm from './SignupForm';
 
 class Signup extends Component {
   render() {
-    const { submitSignup, signupError} = this.props;
+    const { submitSignup, signupError } = this.props;
 
     return (
       <div>
@@ -20,7 +20,7 @@ class Signup extends Component {
             <span>{signupError}</span> :
             null
           }
-          <Link to='/'>Log In</Link>
+          <Link to="/">Log In</Link>
         </div>
       </div>
     );
@@ -30,6 +30,6 @@ class Signup extends Component {
 Signup.propTypes = {
   submitSignup: PropTypes.func.isRequired,
   signupError: PropTypes.string,
-}
+};
 
 export default Signup;

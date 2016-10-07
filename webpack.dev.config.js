@@ -1,9 +1,9 @@
 const path = require('path');
 
-var config = {
+let config = {
   entry: './src/index.js',
   output: {
-    path: 'public/',
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
@@ -21,7 +21,8 @@ var config = {
         loader: "style-loader!css-loader"
       },
       { test: /\.scss?$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!sass',
+        include: path.join(__dirname, 'src', 'styles'),
       },
       { test: /\.png$/,
         loader: 'file'

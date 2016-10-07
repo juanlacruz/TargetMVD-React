@@ -6,7 +6,7 @@ import FormField from './FormField';
 const errorMessages = {
   email: 'Oops! this email is not valid',
   password: 'You must enter your password',
-}
+};
 
 const loginDataConstraints = {
   email: {
@@ -16,20 +16,20 @@ const loginDataConstraints = {
   password: {
     presence: { message: errorMessages.password },
   },
-}
+};
 
 const validate = values => {
-  let errors = validateForm(values, loginDataConstraints, {fullMessages: false});
+  let errors = validateForm(values, loginDataConstraints, { fullMessages: false });
   return (errors ? errors : {});
-}
+};
 
 class LoginForm extends Component {
   render() {
     const { handleSubmit, submitLogin } = this.props;
 
-    return(
+    return (
       <form
-        onSubmit={ handleSubmit(submitLogin) }
+        onSubmit={handleSubmit(submitLogin)}
         className="form"
       >
         <Field name="email" component={FormField} type="email" label="Email" />
@@ -43,7 +43,7 @@ class LoginForm extends Component {
 LoginForm.propTypes = {
   submitLogin: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-}
+};
 
 const LoginReduxForm = reduxForm({
   form: 'login',

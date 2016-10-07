@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 import * as constants from '../../constants';
 
@@ -8,13 +8,13 @@ import LoginForm from './LoginForm';
 
 class Login extends Component {
   componentWillMount() {
-    if(localStorage.getItem(constants.AUTH_TOKEN_KEY)) {
+    if (localStorage.getItem(constants.AUTH_TOKEN_KEY)) {
       browserHistory.push('/home');
     }
   }
 
   render() {
-    const { submitLogin, loginError} = this.props;
+    const { submitLogin, loginError } = this.props;
     return (
       <div>
         <div>
@@ -27,7 +27,7 @@ class Login extends Component {
             <span>{loginError}</span> :
             null
           }
-          <Link to='/signup'>Sign Up</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </div>
     );
@@ -37,6 +37,6 @@ class Login extends Component {
 Login.propTypes = {
   submitLogin: PropTypes.func.isRequired,
   loginError: PropTypes.string,
-}
+};
 
 export default Login;

@@ -13,8 +13,8 @@ export function logout() {
         {
           headers:
           {
-            'X-USER-TOKEN' : localStorage.getItem(constants.AUTH_TOKEN_KEY),
-            'Accept':'*/*',
+            'X-USER-TOKEN': localStorage.getItem(constants.AUTH_TOKEN_KEY),
+            'Accept': '*/*',
             'Content-Type': '*/*',
           }
         }
@@ -33,7 +33,7 @@ export function logout() {
         dispatch(logoutFailure());
         console.log(error);
       });
-  }
+  };
 }
 
 export function logoutRequest(value) {
@@ -47,7 +47,7 @@ export function logoutFailure() {
   return {
     type: types.LOGOUT_FAILURE,
     error: 'There was an error logging out, please try again',
-  }
+  };
 }
 
 export function logoutSuccess() {

@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
   return {
     logoutError: state.logoutReducer.logoutError,
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,11 +14,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(logout());
     }
   };
-}
+};
 
 const HomeContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home)
+)(Home);
 
 export default HomeContainer;

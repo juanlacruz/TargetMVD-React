@@ -14,7 +14,7 @@ export function loginFailure() {
   return {
     type: types.LOGIN_FAILURE,
     error: 'Login failed, please try again'
-  }
+  };
 }
 
 export function login(loginData) {
@@ -22,12 +22,12 @@ export function login(loginData) {
     dispatch(loginRequest(true));
 
     return axios
-        .post(Config.serverUrl + 'users/sign_in', {user: loginData})
+        .post(Config.serverUrl + 'users/sign_in', { user: loginData })
         .then(response => {
           dispatch(loginRequest(false));
 
           if (response.status === 200) {
-            return response.data
+            return response.data;
           }
 
           dispatch(loginFailure());

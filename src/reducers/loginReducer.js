@@ -18,7 +18,7 @@ export default function loginReducer(state = initialState, action = {}) {
         ...state,
         isLoading: action.isLoading,
         loginError: null,
-      }
+      };
     case types.SIGNUP_SUCCESS:
     case types.LOGIN_SUCCESS: {
       localStorage.setItem(constants.AUTH_TOKEN_KEY, action.user.token);
@@ -34,7 +34,7 @@ export default function loginReducer(state = initialState, action = {}) {
         loginError: action.error,
         isLoading: false,
         loginData: initialState.loginData,
-      }
+      };
     }
     default:
       return state;

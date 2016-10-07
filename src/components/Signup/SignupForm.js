@@ -9,7 +9,7 @@ const errorMessages = {
   username: 'You forgot to put your name!',
   password: 'The password must be ' + constants.MIN_PASSWORD_LENGTH + ' characters long',
   password_confirmation: 'Passwords don\'t match',
-}
+};
 
 const signupDataConstraints = {
   email: {
@@ -33,17 +33,17 @@ const signupDataConstraints = {
       message: errorMessages.password_confirmation,
     },
   },
-}
+};
 
 const validate = values => {
-  let errors = validateForm(values, signupDataConstraints, {fullMessages: false});
+  let errors = validateForm(values, signupDataConstraints, { fullMessages: false });
   return (errors ? errors : {});
-}
+};
 
 class SignupForm extends Component {
   render() {
     const { handleSubmit, submitSignup } = this.props;
-    return(
+    return (
       <form
         onSubmit={handleSubmit(submitSignup)}
         className="form"
@@ -61,7 +61,7 @@ class SignupForm extends Component {
 SignupForm.propTypes = {
   submitSignup: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-}
+};
 
 const SignupReduxForm = reduxForm({
   form: 'signup',

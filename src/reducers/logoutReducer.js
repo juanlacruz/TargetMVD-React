@@ -13,7 +13,7 @@ export default function logoutReducer(state = initialState, action = {}) {
         ...state,
         isLoading: action.value,
         logoutError: null,
-      }
+      };
     case types.LOGOUT_SUCCESS:
       localStorage.removeItem(constants.AUTH_TOKEN_KEY);
       return {
@@ -26,7 +26,7 @@ export default function logoutReducer(state = initialState, action = {}) {
         ...state,
         logoutError: action.error,
         isLoading: false,
-      }
+      };
     default:
       return state;
   }

@@ -14,7 +14,7 @@ export function signupFailure() {
   return {
     type: types.SIGNUP_FAILURE,
     error: 'There was an error signing up, please try again',
-  }
+  };
 }
 
 export function signupRequest(value) {
@@ -29,11 +29,11 @@ export function signup(signupData) {
     dispatch(signupRequest(true));
 
     return axios
-        .post(Config.serverUrl + 'users', {user: signupData})
+        .post(Config.serverUrl + 'users', { user: signupData })
         .then(response => {
           dispatch(signupRequest(false));
 
-          if(response.status === 200) {
+          if (response.status === 200) {
             return response.data;
           }
 

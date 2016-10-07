@@ -12,12 +12,12 @@ export default function signupReducer(state = initialState, action = {}) {
         ...state,
         isLoading: action.value,
         signupError: null,
-      }
+      };
     case types.SIGNUP_SUCCESS:
       return {
         ...state,
         isLoading: false,
-      }
+      };
     case types.SIGNUP_FAILURE:
       return {
         ...state,
