@@ -5,10 +5,12 @@
     // I write for browser
     "browser": true,
     // in CommonJS
-    "node": true
+    "node": true,
+    // Jasmine testing
+    "jasmine": true,
   },
   // To give you an idea how to override rule options:
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jasmine/recommended"],
   "rules": {
     "no-mixed-requires": [0],
     "no-console": "off",
@@ -67,7 +69,8 @@
     "react/wrap-multilines": 1,
   },
   "plugins": [
-    "react"
+    "react",
+    "jasmine"
   ],
   "settings": {
     "react": {

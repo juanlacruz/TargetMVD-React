@@ -12,6 +12,9 @@
  3. Install project dependencies `$ npm install`
  4. Start the dev server to get the server running on port 3000! `$ npm start`
 
+# Running tests
+ 1. Simply run `$ npm run test` to have a watcher running tests on the background
+
 # What's included
  - [**ReactJS**](https://facebook.github.io/react/)
  - [**Redux**](http://redux.js.org)
@@ -22,5 +25,7 @@
  - [**validate.js**](https://validatejs.org) for form validation
  - [**Webpack**](https://webpack.github.io/) for bundling JS and other assets into static files
  - [**axios**](https://github.com/mzabriskie/axios) library to make remote HTTP requests using promises
+ - [**Mocha**](https://mochajs.org/) Mocha for running JS tests
+ - [**Chai**](http://chaijs.com/) Chai for test assertions
  - **Babel** with its ES6 and React presets to transpile our code to normal JS since ES6 and JSX are not fully supported by all browsers
  - Linting libraries for JS ES6, Babel and JSX for dev environments

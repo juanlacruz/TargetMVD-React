@@ -1,6 +1,6 @@
 const path = require('path');
 
-let config = {
+var config = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'public'),
@@ -34,12 +34,17 @@ let config = {
   },
   devServer: {
     contentBase: "./public",
-    hot: true
+    hot: true,
+    inline: true,
+    historyApiFallback: true,
   },
   externals: {
     'Config': JSON.stringify({
       serverUrl: "http://localhost:3000/api/v1/",
     }),
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
   },
 };
 
