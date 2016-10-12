@@ -39,7 +39,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors --config webpack.dev.config.js",
     "build": "webpack --progress --colors --history-api-fallback --config webpack.prod.config.js",
-    "test": "mocha -w test/helpers/browser.js test/*.spec.js",
+    "test": "mocha test/helpers/browser.js test/*.spec.js",
+    "test-watch": "mocha -w test/helpers/browser.js test/*.spec.js",
     "eject": "react-scripts eject"
   }
 }
