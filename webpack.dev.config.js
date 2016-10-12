@@ -10,15 +10,12 @@ var config = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react', 'stage-2'],
-        },
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader"
+        loader: "style!css"
       },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
