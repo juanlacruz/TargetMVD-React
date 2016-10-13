@@ -10,7 +10,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import './styles/index.scss';
 
-Object.assign(reducers, {form: formReducer});
+Object.assign(reducers, { form: formReducer });
 const reducer = combineReducers(reducers);
 let store = createStore(
   reducer,
@@ -19,7 +19,7 @@ let store = createStore(
 
 class ReduxAppWrapper extends Component {
   render() {
-    return(
+    return (
       <Provider store={store}>
         <Router history={browserHistory} routes={routes} />
       </Provider>

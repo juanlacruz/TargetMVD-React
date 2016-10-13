@@ -1,0 +1,15 @@
+machine:
+  # Version of ruby to use
+  ruby:
+    version:
+      2.3.1
+
+dependencies:
+  pre:
+    - gem install scss_lint
+
+test:
+  override:
+    - npm run test
+  post:
+    - npm run lint --silent # silent prevents the ELIFECYCLE error

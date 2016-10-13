@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
   return {
     signupError: state.signupReducer.signupError,
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,11 +14,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(signup(signupData));
     },
   };
-}
+};
 
 const SignupContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Signup)
+)(Signup);
 
 export default SignupContainer;
