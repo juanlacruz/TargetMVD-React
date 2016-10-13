@@ -16,7 +16,7 @@ class FormField extends Component {
   }
 }
 
-FormField.PropTypes = {
+FormField.propTypes = {
   input: PropTypes.object.isRequired,
   label: PropTypes.string,
   type: PropTypes.string.isRequired,
