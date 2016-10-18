@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
-import axios from 'axios';
 import Config from 'Config';
 import { browserHistory } from 'react-router';
+import api from '../api/apiService.js';
 
 export function signupSuccess(user) {
   return {
@@ -28,24 +28,15 @@ export function signup(signupData) {
   return (dispatch) => {
     dispatch(signupRequest(true));
 
-    return axios
-        .post(Config.serverUrl + 'users', { user: signupData })
-        .then(response => {
-          dispatch(signupRequest(false));
-
-          if (response.status === 200) {
-            return response.data;
-          }
-
-          throw 'request failed';
-        })
-        .then(userData => {
-          dispatch(signupSuccess(userData));
-          browserHistory.push('/home');
-        })
-        .catch(error => {
-          console.log(error);
-          dispatch(signupFailure());
-        });
+    return api
+      .post(Config.serverUrl + 'users', { user: signupData })
+      .then((response) => {
+        dispatch(signupSuccess(response));
+        browserHistory.push('/home');
+      })
+      .catch((error) => {
+        console.log(error);
+        dispatch(signupFailure());
+      });
   };
 }

@@ -2,6 +2,7 @@ import * as types from './actionTypes';
 import axios from 'axios';
 import Config from 'Config';
 import { browserHistory } from 'react-router';
+import api from '../api/apiService.js';
 
 export function loginRequest(value) {
   return {
@@ -21,26 +22,16 @@ export function login(loginData) {
   return (dispatch) => {
     dispatch(loginRequest(true));
 
-    return axios
-        .post(Config.serverUrl + 'users/sign_in', { user: loginData })
-        .then(response => {
-          dispatch(loginRequest(false));
-
-          if (response.status === 200) {
-            return response.data;
-          }
-
-          dispatch(loginFailure());
-          throw 'request failed';
-        })
-        .then(userData => {
-          dispatch(loginSuccess(userData));
-          browserHistory.push('/home');
-        })
-        .catch(error => {
-          dispatch(loginFailure());
-          console.log(error);
-        });
+    return api
+      .post(Config.serverUrl + 'users/sign_in', { user: loginData })
+      .then((response) => {
+        dispatch(loginSuccess(response));
+        browserHistory.push('/home');
+      })
+      .catch((error) => {
+        dispatch(loginFailure());
+        console.log(error);
+      });
   };
 }
 
