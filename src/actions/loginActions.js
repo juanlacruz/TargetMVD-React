@@ -1,8 +1,8 @@
 import * as types from './actionTypes';
 import axios from 'axios';
-import Config from 'Config';
 import { browserHistory } from 'react-router';
-import api from '../api/apiService.js';
+import * as loginApi from '../api/loginApi';
+import * as constants from '../constants';
 
 export function loginRequest(value) {
   return {
@@ -22,10 +22,10 @@ export function login(loginData) {
   return (dispatch) => {
     dispatch(loginRequest(true));
 
-    return api
-      .post(Config.serverUrl + 'users/sign_in', { user: loginData })
+    return loginApi.login(loginData)
       .then((response) => {
         dispatch(loginSuccess(response));
+        axios.defaults.headers.common[constants.AUTH_TOKEN_KEY] = response.token;
         browserHistory.push('/home');
       })
       .catch((error) => {

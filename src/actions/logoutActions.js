@@ -1,16 +1,16 @@
 import * as types from './actionTypes';
 import axios from 'axios';
-import Config from 'Config';
 import { browserHistory } from 'react-router';
-import api from '../api/apiService.js';
+import * as loginApi from '../api/loginApi';
+import * as constants from '../constants';
 
 export function logout() {
   return (dispatch) => {
     dispatch(logoutRequest(true));
 
-    return api
-      .delete(Config.serverUrl + 'users/sign_out')
+    return loginApi.logout()
       .then(() => {
+        axios.defaults.headers.common[constants.AUTH_TOKEN_KEY] = null;
         dispatch(logoutRequest(false));
         dispatch(logoutSuccess());
         browserHistory.push('/');

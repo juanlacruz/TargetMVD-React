@@ -1,7 +1,6 @@
 import * as types from './actionTypes';
-import Config from 'Config';
 import { browserHistory } from 'react-router';
-import api from '../api/apiService.js';
+import * as userApi from '../api/userApi';
 
 export function signupSuccess(user) {
   return {
@@ -28,8 +27,7 @@ export function signup(signupData) {
   return (dispatch) => {
     dispatch(signupRequest(true));
 
-    return api
-      .post(Config.serverUrl + 'users', { user: signupData })
+    return userApi.signup(signupData)
       .then((response) => {
         dispatch(signupSuccess(response));
         browserHistory.push('/home');

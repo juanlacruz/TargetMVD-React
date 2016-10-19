@@ -2,8 +2,8 @@ import axios from 'axios';
 import * as constants from '../constants';
 
 const message = {
-  ERROR_RESPONSE_EMPTY: "Emtpy response",
-  ERROR_RESPONSE_NOT_JSON: "Response isn't a JSON"
+  ERROR_RESPONSE_EMPTY: 'Emtpy response',
+  ERROR_RESPONSE_NOT_JSON: 'Response isn\'t a JSON'
 };
 
 const handleErrors = (response) =>
@@ -12,7 +12,7 @@ const handleErrors = (response) =>
       reject({ message: message.ERROR_RESPONSE_EMPTY });
       return;
     }
-    console.log(response);
+
     if (response.status === 200 || response.status === 204) {
       resolve(response);
       return;
@@ -46,7 +46,7 @@ class Api {
   get(uri) {
     return new Promise((resolve, reject) => {
       axios
-        .get(uri, this.getTokenHeader())
+        .get(uri)
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -57,7 +57,7 @@ class Api {
   post(uri, data) {
     return new Promise((resolve, reject) => {
       axios
-        .post(uri, data, this.getTokenHeader())
+        .post(uri, data)
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -68,7 +68,7 @@ class Api {
   delete(uri) {
     return new Promise((resolve, reject) => {
       axios
-        .delete(uri, this.getTokenHeader())
+        .delete(uri)
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -79,7 +79,7 @@ class Api {
   put(uri, data) {
     return new Promise((resolve, reject) => {
       axios
-        .put(uri, data, this.getTokenHeader())
+        .put(uri, data)
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -90,7 +90,7 @@ class Api {
   patch(uri, data) {
     return new Promise((resolve, reject) => {
       axios
-        .patch(uri, data, this.getTokenHeader())
+        .patch(uri, data)
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
