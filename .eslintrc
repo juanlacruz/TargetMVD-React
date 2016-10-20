@@ -8,6 +8,7 @@
     "node": true,
     // Jasmine testing
     "jasmine": true,
+    "es6": true,
   },
   // To give you an idea how to override rule options:
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jasmine/recommended"],

@@ -1,35 +1,22 @@
 import * as types from './actionTypes';
 import axios from 'axios';
-import Config from 'Config';
 import { browserHistory } from 'react-router';
+import * as loginApi from '../api/loginApi';
 import * as constants from '../constants';
 
 export function logout() {
   return (dispatch) => {
     dispatch(logoutRequest(true));
 
-    return axios
-      .delete(Config.serverUrl + 'users/sign_out',
-        {
-          headers:
-          {
-            'X-USER-TOKEN': localStorage.getItem(constants.AUTH_TOKEN_KEY),
-            'Accept': '*/*',
-            'Content-Type': '*/*',
-          }
-        }
-      )
-      .then(response => {
+    return loginApi.logout()
+      .then(() => {
+        axios.defaults.headers.common[constants.AUTH_TOKEN_KEY] = null;
         dispatch(logoutRequest(false));
-
-        if (response.status === 204) {
-          dispatch(logoutSuccess());
-          browserHistory.push('/');
-        } else {
-          throw 'request failed';
-        }
+        dispatch(logoutSuccess());
+        browserHistory.push('/');
       })
-      .catch(error => {
+      .catch((error) => {
+        dispatch(logoutRequest(false));
         dispatch(logoutFailure());
         console.log(error);
       });
