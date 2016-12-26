@@ -1,0 +1,20 @@
+.sign-up-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+
+  &> * { display: block; }
+  > * + * { margin-top: 1rem; }
+}
+
+.sign-up-form {
+  max-width: 50rem;
+  width: 100%;
+
+  > * + * { margin-top: 2.5rem; }
+}
+
+.line-separator {
+	width: 20rem;
+	height: .05rem;
+	border: solid .05rem grey;
+}

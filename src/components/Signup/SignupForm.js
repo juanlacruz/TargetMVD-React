@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import FormField from './FormField';
+import FormField from '../common/FormField';
 import { validate as validateForm } from 'validate.js';
 import * as constants from '../../constants';
 
@@ -46,13 +46,15 @@ class SignupForm extends Component {
     return (
       <form
         onSubmit={handleSubmit(submitSignup)}
-        className="form"
+        className="form sign-up-form"
       >
-        <Field name="email" component={FormField} type="email" label="Email" />
-        <Field name="username" component={FormField} type="text" label="Username"/>
-        <Field name="password" component={FormField} type="password" label="Password" />
-        <Field name="password_confirmation" component={FormField} type="password" label="Password Confirmation" />
-        <button type="submit">Submit</button>
+        <Field name="name" component={FormField} type="text" label="NAME"/>
+        <Field name="email" component={FormField} type="email" label="EMAIL"/>
+        <Field name="password" component={FormField} type="password" label="PASSWORD"/>
+        <Field name="password_confirmation" component={FormField} type="password" label="CONFIRMATION PASSWORD"
+               placeholder="Min. 6 characters long"/>
+        <Field name="gender" component={FormField} type="text" label="GENDER" placeholder="Select Your Gender" />
+        <button className="button-target" type="submit">SIGN UP</button>
       </form>
     );
   }
