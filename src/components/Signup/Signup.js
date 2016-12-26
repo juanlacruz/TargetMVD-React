@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import '../../styles/Signup.scss';
+import '../../styles/Common.scss';
 import SignupForm from './SignupForm';
 
 class Signup extends Component {
@@ -9,19 +10,16 @@ class Signup extends Component {
     const { submitSignup, signupError } = this.props;
 
     return (
-      <div>
-        <div>
-          <h2>Signup</h2>
-          <SignupForm
-            submitSignup={submitSignup}
-          />
-          {
-            signupError ?
-            <span>{signupError}</span> :
-            null
-          }
-          <Link to="/">Log In</Link>
-        </div>
+      <div className="container">
+        <h1 className="title">sign up</h1>
+        <SignupForm
+          submitSignup={submitSignup}
+        />
+        {
+          signupError && <span>{signupError}</span>
+        }
+        <div className="line-separator margin-top-target"></div>
+        <h3 className="sub-title">sign in</h3>
       </div>
     );
   }

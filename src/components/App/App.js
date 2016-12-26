@@ -1,10 +1,11 @@
 import React, { PropTypes, Component } from 'react';
+import Header from '../common/Header';
 
 class App extends Component {
   render() {
     const { children } = this.props;
     return (
-      <div className="app-container">
+      <div className='app-container'>
         { /* Header component goes here*/ }
         {children}
         { /* Footer component goes here*/ }
