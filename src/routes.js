@@ -11,5 +11,6 @@ export default (
     <IndexRoute component={LoginContainer} />
     <Route path="/signup" component={SignupContainer} />
     <Route path="/home" component={HomeContainer} />
+    <Route path="/login" component={LoginContainer} />
   </Route>
 );

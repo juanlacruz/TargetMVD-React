@@ -19,7 +19,7 @@ class Signup extends Component {
           signupError && <span>{signupError}</span>
         }
         <div className="line-separator margin-top-target"></div>
-        <h3 className="sub-title">sign in</h3>
+        <Link className="sub-title margin-top-target" to="/login">Login</Link>
       </div>
     );
   }
