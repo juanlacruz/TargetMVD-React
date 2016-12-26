@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import FormField from '../common/FormField';
 import { validate as validateForm } from 'validate.js';
 import * as constants from '../../constants';
+import '../../styles/Common.scss';
 
 const errorMessages = {
   email: 'Oops! this email is not valid',
@@ -46,7 +47,7 @@ class SignupForm extends Component {
     return (
       <form
         onSubmit={handleSubmit(submitSignup)}
-        className="form sign-up-form"
+        className="form container-form"
       >
         <Field name="name" component={FormField} type="text" label="NAME"/>
         <Field name="email" component={FormField} type="email" label="EMAIL"/>

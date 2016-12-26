@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 import * as constants from '../../constants';
+import smilies from '../../assets/smilies.png'
 
 import '../../styles/Login.scss';
 import LoginForm from './LoginForm';
@@ -16,19 +17,16 @@ class Login extends Component {
   render() {
     const { submitLogin, loginError } = this.props;
     return (
-      <div>
-        <div>
-          <h2>Login</h2>
-          <LoginForm
-            submitLogin={submitLogin}
-          />
-          {
-            loginError ?
-            <span>{loginError}</span> :
-            null
-          }
-          <Link to="/signup">Sign Up</Link>
-        </div>
+      <div className="container">
+        <img src={smilies} />
+        <h1>Welcome to <b>TARGET</b></h1>
+        <LoginForm
+          submitLogin={submitLogin}
+        />
+        {
+          loginError && <span>{loginError}</span>
+        }
+        <Link className="sub-title margin-top-target" to="/signup">Sign Up</Link>
       </div>
     );
   }

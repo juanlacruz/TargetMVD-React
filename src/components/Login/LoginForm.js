@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { validate as validateForm } from 'validate.js';
-import FormField from './FormField';
+import FormField from '../common/FormField';
+import '../../styles/Common.scss';
 
 const errorMessages = {
   email: 'Oops! this email is not valid',
@@ -30,11 +31,11 @@ class LoginForm extends Component {
     return (
       <form
         onSubmit={handleSubmit(submitLogin)}
-        className="form"
+        className="form container-form"
       >
         <Field name="email" component={FormField} type="email" label="Email" />
         <Field name="password" component={FormField} type="password" label="Password" />
-        <button type="submit">Submit</button>
+        <button className="button-target" type="submit">Submit</button>
       </form>
     );
   }
