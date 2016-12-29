@@ -2,14 +2,13 @@ import axios from 'axios';
 import * as constants from '../constants';
 
 const message = {
-  ERROR_RESPONSE_EMPTY: 'Emtpy response',
-  ERROR_RESPONSE_NOT_JSON: 'Response isn\'t a JSON'
+  ERROR_RESPONSE: 'There was an issue with your request. Please try again later.',
 };
 
 const handleErrors = (response) =>
   new Promise((resolve, reject) => {
     if (!response) {
-      reject({ message: message.ERROR_RESPONSE_EMPTY });
+      reject({ message: message.ERROR_RESPONSE });
       return;
     }
 
@@ -30,13 +29,12 @@ const getResponseBody = (response) => {
 
 class Api {
 
-  getTokenHeader() {
+  getTokenHeader(hasFile) {
     if (localStorage.getItem(constants.AUTH_TOKEN_KEY)) {
       return {
         headers: {
           'X-USER-TOKEN': localStorage.getItem(constants.AUTH_TOKEN_KEY),
-          'Accept': '*/*',
-          'Content-Type': '*/*',
+          'Content-Type': hasFile ? undefined : 'application/json',
         }
       };
     }
@@ -46,7 +44,7 @@ class Api {
   get(uri) {
     return new Promise((resolve, reject) => {
       axios
-        .get(uri)
+        .get(uri, this.getTokenHeader())
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -54,10 +52,10 @@ class Api {
     });
   }
 
-  post(uri, data) {
+  post(uri, data, hasFile = false) {
     return new Promise((resolve, reject) => {
       axios
-        .post(uri, data)
+        .post(uri, data, this.getTokenHeader(hasFile))
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -68,7 +66,7 @@ class Api {
   delete(uri) {
     return new Promise((resolve, reject) => {
       axios
-        .delete(uri)
+        .delete(uri, this.getTokenHeader())
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -76,10 +74,10 @@ class Api {
     });
   }
 
-  put(uri, data) {
+  put(uri, data, hasFile = false) {
     return new Promise((resolve, reject) => {
       axios
-        .put(uri, data)
+        .put(uri, data, this.getTokenHeader(hasFile))
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))
@@ -90,7 +88,7 @@ class Api {
   patch(uri, data) {
     return new Promise((resolve, reject) => {
       axios
-        .patch(uri, data)
+        .patch(uri, data, this.getTokenHeader())
         .then(handleErrors)
         .then(getResponseBody)
         .then(response => resolve(response))

@@ -1,8 +1,8 @@
-$dark-color: #222;
-$white-color: #fff;
+@import 'Constants';
 
 .app {
   text-align: center;
+  display: flex;
 }
 
 .app-header {
@@ -14,4 +14,13 @@ $white-color: #fff;
 
 .app-intro {
   font-size: large;
+}
+
+.sub-title-home {
+  font-weight: bold;
+  color: $black;
+}
+
+.leftpanel-container {
+  min-width: 30rem;
 }

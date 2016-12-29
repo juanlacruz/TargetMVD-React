@@ -5,6 +5,7 @@ import App from './components/App/App';
 import LoginContainer from './containers/Login';
 import SignupContainer from './containers/Signup';
 import HomeContainer from './containers/Home';
+import GoogleMaps from './components/common/Map.js';
 
 export default (
   <Route path="/" component={App}>

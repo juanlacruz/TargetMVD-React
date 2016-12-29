@@ -5,9 +5,3 @@
   &> * { display: block; }
   > * + * { margin-top: 1rem; }
 }
-
-.line-separator {
-	width: 20rem;
-	height: .05rem;
-	border: solid .05rem grey;
-}
