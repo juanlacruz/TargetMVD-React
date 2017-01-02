@@ -23,6 +23,20 @@ export function signupRequest(value) {
   };
 }
 
+export function editProfileSuccess(user) {
+  return {
+    type: types.SIGNUP_SUCCESS,
+    user: user,
+  };
+}
+
+export function editProfileFailure() {
+  return {
+    type: types.SIGNUP_FAILURE,
+    error: 'There was an error editing your profile, please try again',
+  };
+}
+
 export function signup(signupData) {
   return (dispatch) => {
     dispatch(signupRequest(true));
@@ -35,6 +49,20 @@ export function signup(signupData) {
       .catch((error) => {
         console.log(error);
         dispatch(signupFailure());
+      });
+  };
+}
+
+export function editProfile(editData) {
+  return (dispatch) => {
+    return userApi.editProfile(editData)
+      .then((response) => {
+        dispatch(editProfileSuccess(response));
+        browserHistory.push('/home');
+      })
+      .catch((error) => {
+        console.log(error);
+        dispatch(editProfileFailure());
       });
   };
 }

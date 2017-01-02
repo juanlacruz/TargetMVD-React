@@ -15,7 +15,7 @@
   font-size: 2em;
   font-weight: bold;
   letter-spacing: .3rem;
-  color: black;
+  color: $black;
   text-transform: uppercase;
 }
 
@@ -58,4 +58,29 @@
   width: 100%;
 
   > * + * { margin-top: 2.5rem; }
+}
+
+.circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: $dark-skyblue;
+}
+
+.circle.box {
+  display: flex;
+}
+
+.img-center {
+  margin: auto;
+}
+
+.line-separator {
+  width: 20rem;
+  height: .05rem;
+  border: solid .05rem $grey;
+}
+
+.line-separator.small-line {
+  width: 10rem;
 }
