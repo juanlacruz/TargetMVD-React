@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-  showEditProfile: true
+  showEditProfile: false
 };
 
 export default function leftPanelReducer(state = initialState, action = {}) {

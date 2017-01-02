@@ -74,7 +74,7 @@ class Api {
     });
   }
 
-  put(uri, data, hasFile = false) {
+  put(uri, data, hasFile = true) {
     return new Promise((resolve, reject) => {
       axios
         .put(uri, data, this.getTokenHeader(hasFile))

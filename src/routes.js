@@ -7,11 +7,25 @@ import SignupContainer from './containers/Signup';
 import HomeContainer from './containers/Home';
 import GoogleMaps from './components/common/Map.js';
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={LoginContainer} />
-    <Route path="/signup" component={SignupContainer} />
-    <Route path="/home" component={HomeContainer} />
-    <Route path="/login" component={LoginContainer} />
-  </Route>
-);
+export const getRoutes = (store) => {
+  const authRequired = (nextState, replace) => {
+    const state = store.getState();
+    const user = state.loginReducer.user;
+
+    if (!user || !user.token) {
+      replace({
+        pathname: '/login',
+        state: { nextPathname: nextState.location.pathname }
+      });
+    }
+  };
+
+  return (
+    <Route path="/" component={App}>
+      <IndexRoute component={LoginContainer} />
+      <Route path="/signup" component={SignupContainer} />
+      <Route path="/home" component={HomeContainer} onEnter={authRequired}/>
+      <Route path="/login" component={LoginContainer} />
+    </Route>
+  );
+}
