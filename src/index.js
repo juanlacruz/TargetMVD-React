@@ -8,6 +8,7 @@ import { reducer as formReducer } from 'redux-form';
 import axios from 'axios';
 import Config from 'Config';
 import persistState from 'redux-localstorage';
+import { getRoutes }  from './routes'
 
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
@@ -48,7 +49,9 @@ class ReduxAppWrapper extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={browserHistory} routes={routes} />
+        <Router history={browserHistory}>
+          { getRoutes(store) }
+        </Router>
       </Provider>
     );
   }

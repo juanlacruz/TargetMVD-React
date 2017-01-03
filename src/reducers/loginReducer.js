@@ -27,7 +27,14 @@ export default function loginReducer(state = initialState, action = {}) {
         user: action.user,
         isLoading: false,
       };
-    }
+    };
+    case types.EDIT_PROFILE_SUCCESS: {
+      debugger;
+      return {
+        ...state,
+        user: action.user,
+      };
+    };
     case types.LOGIN_FAILURE: {
       return {
         ...state,

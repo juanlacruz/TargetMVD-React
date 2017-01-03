@@ -25,7 +25,7 @@ export function signupRequest(value) {
 
 export function editProfileSuccess(user) {
   return {
-    type: types.SIGNUP_SUCCESS,
+    type: types.EDIT_PROFILE_SUCCESS,
     user: user,
   };
 }
