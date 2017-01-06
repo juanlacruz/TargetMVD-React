@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import '../../styles/Home.scss';
 import GoogleMap from './GoogleMapContainer';
-import LeftPanel from '../../containers/LeftPanel';
+import SideNavBar from '../../containers/SideNavBar';
 
 
 class Home extends Component {
@@ -9,7 +9,7 @@ class Home extends Component {
     const { logout, logoutError } = this.props;
     return (
       <div className="app">
-        <div className="leftpanel-container"><LeftPanel/></div>
+        <div className="leftpanel-container"><SideNavBar/></div>
         <GoogleMap/>
       </div>
     );

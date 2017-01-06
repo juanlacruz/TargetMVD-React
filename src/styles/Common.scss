@@ -84,3 +84,26 @@
 .line-separator.small-line {
   width: 10rem;
 }
+
+.side-bar {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      line-height: 5rem;
+      color: $dark-skyblue;
+      cursor: pointer;
+    }
+
+    li:hover { background-color: $skyblue; }
+  }
+}
+
+.close-icon:after {
+  content: "\00d7";
+  font-size: 2em;
+  margin-right: 25rem;
+  cursor: pointer;
+}

@@ -1,15 +1,10 @@
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
+import * as constants from '../../constants';
 
-const Header = () => {
+const Header = ({ toggleShowItem, showItem }) => {
   return (
-    <nav>
-      <IndexLink to="/" activeClassName="active">Home</IndexLink>
-      {" | "}
-      <Link to="/about" activeClassName="active">About</Link>
-      {" | "}
-      <Link to="/courses" activeClassName="active">Courses</Link>
-    </nav>
+    <span className="close-icon" onClick={() => toggleShowItem(constants.HOME)}></span>
   );
 };
 
