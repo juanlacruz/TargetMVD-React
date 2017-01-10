@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import picture from '../../assets/user-picture.png'
-import Signup from '../../containers/Signup'
+import picture from '../../assets/user-picture.png';
+import Signup from '../../containers/Signup';
 import '../../styles/LeftPanel.scss';
 
 class LeftPanel extends Component {

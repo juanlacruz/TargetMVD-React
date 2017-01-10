@@ -8,7 +8,8 @@ import { reducer as formReducer } from 'redux-form';
 import axios from 'axios';
 import Config from 'Config';
 import persistState from 'redux-localstorage';
-import { getRoutes }  from './routes'
+import { getRoutes }  from './routes';
+import Foundation from 'react-foundation';
 
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
