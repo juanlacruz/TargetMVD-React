@@ -1,11 +1,10 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-
 import App from './components/App/App';
 import LoginContainer from './containers/Login';
 import SignupContainer from './containers/Signup';
 import HomeContainer from './containers/Home';
-import GoogleMaps from './components/common/Map.js';
+import Target from './components/Target/Target.js';
 
 export const getRoutes = (store) => {
   const authRequired = (nextState, replace) => {
@@ -28,4 +27,4 @@ export const getRoutes = (store) => {
       <Route path="/login" component={LoginContainer} />
     </Route>
   );
-}
+};

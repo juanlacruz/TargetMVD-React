@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleShowItem: (value) => {
-      dispatch(toggleShow(value))
+      dispatch(toggleShow(value));
     }
   };
 };

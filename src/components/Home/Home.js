@@ -3,10 +3,8 @@ import '../../styles/Home.scss';
 import GoogleMap from './GoogleMapContainer';
 import SideNavBar from '../../containers/SideNavBar';
 
-
 class Home extends Component {
   render() {
-    const { logout, logoutError } = this.props;
     return (
       <div className="app">
         <div className="leftpanel-container"><SideNavBar/></div>

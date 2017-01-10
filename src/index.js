@@ -8,12 +8,14 @@ import { reducer as formReducer } from 'redux-form';
 import axios from 'axios';
 import Config from 'Config';
 import persistState from 'redux-localstorage';
-import { getRoutes }  from './routes';
-import Foundation from 'react-foundation';
+import { getRoutes } from './routes';
+import 'react-select/dist/react-select.css';
 
 import { Router, browserHistory } from 'react-router';
-import routes from './routes';
 import './styles/index.scss';
+import createLogger from 'redux-logger';
+
+const logger = createLogger();
 
 Object.assign(reducers, { form: formReducer });
 const reducer = combineReducers(reducers);
@@ -31,7 +33,7 @@ let persistSlicer = (path) => {
 };
 
 const enhancer = compose(
-  applyMiddleware(thunk),
+  applyMiddleware(thunk, logger),
   persistState(persistPath, { slicer: persistSlicer }),
 );
 
