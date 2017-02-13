@@ -20,7 +20,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
-    "react-google-maps": "5.1.0",
+    "react-google-maps": "4.11",
     "html-webpack-plugin": "2.24.0"
   },
   "dependencies": {
@@ -36,9 +36,11 @@
     "react-foundation": "^0.7.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-select": "^1.0.0-rc.3",
     "redux": "^3.6.0",
     "redux-form": "^6.0.5",
     "redux-localstorage": "^0.4.1",
+    "redux-logger": "^2.8.1",
     "redux-thunk": "^2.1.0",
     "validate.js": "^0.10.0",
     "webpack-dev-server": "^1.16.1"

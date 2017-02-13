@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import Map from '../common/Map';
+import React from 'react';
+import Map from '../../containers/Map';
 
 export const GoogleMapContainer = () => {
   // TODO: JG: center is hardcoded, must use html5 geolocalization to set center

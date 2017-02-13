@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
 import '../../styles/Common.scss';
 import LeftPanel from '../../containers/LeftPanel';
+import Target from '../Target/Target';
 import Header from '../../containers/Header';
 import * as constants from '../../constants';
 
@@ -25,8 +25,11 @@ const SideNavBar = ({ toggleShowItem, showItem }) => {
     case constants.PROFILE:
       show = <LeftPanel/>;
       break;
+    case constants.TARGET:
+      show = <Target/>;
+      break;
     default:
-      show = <span onClick={() => toggleShowItem(constants.PROFILE)}>'juano'</span>
+      show = <span onClick={() => toggleShowItem(constants.PROFILE)}>'juano'</span>;
   }
 
   return (
@@ -35,6 +38,6 @@ const SideNavBar = ({ toggleShowItem, showItem }) => {
       {show}
     </div>
   );
-}
+};
 
 export default SideNavBar;
